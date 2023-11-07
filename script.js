@@ -4,11 +4,18 @@ let surnameBox = document.getElementById("surname");
 let form = document.getElementById("form");
 let submit = document.getElementById("submit");
 let reset = document.getElementById("reset");
-
+window.addEventListener("DOMContentLoaded", () => {
+  let h3 = document.querySelector("h3");
+  let name = localStorage.getItem("Name");
+  let surname = localStorage.getItem("Surname");
+  if (name && surname) {
+    h3.innerText = name + " " + surname;
+  }
+});
 form.onsubmit = function (e) {
+  e.preventDefault();
   let name = nameBox.value;
   let surname = surnameBox.value;
-  e.preventDefault();
   localStorage.setItem("Name", name);
   localStorage.setItem("Surname", surname);
 
