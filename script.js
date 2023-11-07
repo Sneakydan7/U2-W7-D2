@@ -13,7 +13,8 @@ form.onsubmit = function (e) {
   localStorage.setItem("Surname", surname);
 
   let h3 = document.getElementById("h3");
-  h3.innerText = name + " " + surname;
+  h3.innerText =
+    localStorage.getItem("Name") + " " + localStorage.getItem("Surname");
 };
 
 reset.addEventListener("click", function () {
