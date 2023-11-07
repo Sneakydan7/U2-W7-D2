@@ -5,15 +5,6 @@ let form = document.getElementById("form");
 let submit = document.getElementById("submit");
 let reset = document.getElementById("reset");
 
-window.addEventListener("DOMContentLoaded", () => {
-  const savedName = localStorage.getItem("Name");
-  const savedSurame = localStorage.getItem("Surname");
-  let savingSpace = document.getElementById("saved-name");
-  if (savedName) {
-    savingSpace.value = savedName;
-  }
-});
-
 form.onsubmit = function (e) {
   let name = nameBox.value;
   let surname = surnameBox.value;
@@ -21,11 +12,8 @@ form.onsubmit = function (e) {
   localStorage.setItem("Name", name);
   localStorage.setItem("Surname", surname);
 
-  let h3 = document.createElement("h3");
+  let h3 = document.getElementById("h3");
   h3.innerText = name + " " + surname;
-
-  let savingSpace = document.getElementById("saved-name");
-  savingSpace.appendChild(h3);
 };
 
 reset.addEventListener("click", function () {
@@ -45,7 +33,7 @@ if (!startTimer) {
 function updateTime() {
   let currentTime = new Date().getTime();
   let timePassing = Math.floor((currentTime - startTimer) / 1000);
-  document.getElementById("timer").textContent = timePassing + " secondi";
+  document.getElementById("timer").innerText = timePassing + " secondi";
 }
 
 setInterval(updateTime, 1000);
