@@ -20,8 +20,7 @@ form.onsubmit = function (e) {
   localStorage.setItem("Surname", surname);
 
   let h3 = document.getElementById("h3");
-  h3.innerText =
-    localStorage.getItem("Name") + " " + localStorage.getItem("Surname");
+  h3.innerText = name + " " + surname;
 };
 
 reset.addEventListener("click", function () {
@@ -29,7 +28,7 @@ reset.addEventListener("click", function () {
   localStorage.removeItem("Surname");
   let savingSpace = document.getElementById("saved-name");
   let h3 = document.querySelector("h3");
-  savingSpace.removeChild(h3);
+  h3.innerText = "";
 });
 
 let startTimer = sessionStorage.getItem("startTime");
