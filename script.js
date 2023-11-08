@@ -26,7 +26,6 @@ form.onsubmit = function (e) {
 reset.addEventListener("click", function () {
   localStorage.removeItem("Name");
   localStorage.removeItem("Surname");
-  let savingSpace = document.getElementById("saved-name");
   let h3 = document.querySelector("h3");
   h3.innerText = "";
 });
